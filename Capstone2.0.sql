@@ -69,11 +69,12 @@ LEFT JOIN
         GROUP BY 
             o.employee_id, DATE(o.order_date_time)
     ) AS daily_sales ON e.employee_id = daily_sales.employee_id
-GROUP BY 
-    t.truck_id
-ORDER BY 
-    t.truck_id;
+GROUP BY t.truck_id
+ORDER BY t.truck_id;
     
 
-SELECT E.first_name, E.last_name, COUNT(O.order_id) AS total_orders FROM Employees E LEFT JOIN Orders O ON E.employee_id = O.employee_id GROUP BY E.employee_id ORDER BY total_orders DESC;
-
+SELECT E.first_name, E.last_name, COUNT(O.order_id) AS total_orders 
+FROM Employees E 
+LEFT JOIN Orders O ON E.employee_id = O.employee_id 
+GROUP BY E.employee_id 
+ORDER BY total_orders DESC;
