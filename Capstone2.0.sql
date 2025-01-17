@@ -76,3 +76,4 @@ ORDER BY
     
 
 SELECT E.first_name, E.last_name, COUNT(O.order_id) AS total_orders FROM Employees E LEFT JOIN Orders O ON E.employee_id = O.employee_id GROUP BY E.employee_id ORDER BY total_orders DESC;
+
